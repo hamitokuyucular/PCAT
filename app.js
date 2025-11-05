@@ -25,14 +25,14 @@ app.get("/", async (req, res) => {
   const photos = await Photo.find().sort("-dateCreated");
   res.render("index", {
     photos
-  })
+  });
 });
 
 app.get("/photos/:id", async (req, res) => {
   const photo = await Photo.findById(req.params.id)
   res.render("photo", {
     photo
-  })
+  });
 });
 
 app.get("/about", (req, res) => {
@@ -40,11 +40,11 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/photo", (req, res) => {
-  res.render("photo")
+  res.render("photo");
 });
 
 app.get("/add", (req, res) => {
-  res.render("add")
+  res.render("add");
 });
 
 app.post("/photos", async (req, res) => {
