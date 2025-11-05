@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 // creat Schema
 const PhotoSchema = new Schema({
   title: String, // String is shorthand for {type: String}
-  desc: String,
+  description: String,
   image: String,
   dateCreated: {
     type: Date,
