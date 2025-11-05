@@ -1,11 +1,15 @@
-const express = require("express")
-const ejs = require("ejs")
-const path = require("path")
+const express = require("express");
+const ejs = require("ejs");
+const path = require("path");
+const Photo = require("./models/Photo")
 
 const app = express();
 
+// connect DB
+mongoose.connect('mongodb://127.0.0.1:27017/pcat-db');
+
 // TEMPLATE ENGINE
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 
 // MIDDLEWARES
 app.use(express.static('public'));
@@ -25,8 +29,8 @@ app.get("/add", (req, res) => {
   res.render("add")
 });
 
-app.post("/photos", (req, res) => {
-  console.log(req.body);
+app.post("/photos", async (req, res) => {
+  await Photo.create(req.body)
   res.redirect("/");
 });
 
