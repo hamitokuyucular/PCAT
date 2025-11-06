@@ -9,7 +9,7 @@ const pageController = require("./controllers/pageController")
 const app = express();
 
 // connect DB
-mongoose.connect('mongodb://127.0.0.1:27017/pcat-db');
+mongoose.connect('mongodb+srv://hamitokuyucular:WNpOqfggT4swbGJ8@cluster0.9w2xmv6.mongodb.net/?appName=Cluster0');
 
 // TEMPLATE ENGINE
 app.set("view engine", "ejs");
