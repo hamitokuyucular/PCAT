@@ -526,3 +526,8 @@ video {
         flex-direction: column;
     }
 }
+
+.page-control {
+    display: flex;
+    justify-content: center;
+}
